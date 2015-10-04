@@ -1,0 +1,47 @@
+diff --git a/libffmpegthumbnailer/filmstripfilter.cpp b/libffmpegthumbnailer/filmstripfilter.cpp
+index 93b77c8..c020397 100644
+--- a/libffmpegthumbnailer/filmstripfilter.cpp
++++ b/libffmpegthumbnailer/filmstripfilter.cpp
+@@ -24,6 +24,8 @@ namespace ffmpegthumbnailer
+ 
+ static const uint8_t* determineFilmStrip(uint32_t videoWidth, uint32_t& filmStripWidth, uint32_t& filmStripHeight)
+ {
++    return NULL;
++
+     if (videoWidth <= SMALLEST_FILM_STRIP_WIDTH * 2)
+     {
+         return NULL;
+@@ -59,6 +61,8 @@ static const uint8_t* determineFilmStrip(uint32_t videoWidth, uint32_t& filmStri
+ 
+ void FilmStripFilter::process(VideoFrame& videoFrame)
+ {
++    return;
++
+     uint32_t filmStripWidth;
+     uint32_t filmStripHeight;
+     const uint8_t* filmHole = determineFilmStrip(videoFrame.width, filmStripWidth, filmStripHeight);
+diff --git a/main.c b/main.c
+index 1ad361f..5fd5f97 100644
+--- a/main.c
++++ b/main.c
+@@ -35,7 +35,7 @@ int main(int argc, char** argv)
+     image_data* imageData = video_thumbnailer_create_image_data();
+ 
+     thumbnailer->seek_percentage        = 15;
+-    thumbnailer->overlay_film_strip     = 1;
++    thumbnailer->overlay_film_strip     = 0;
+     thumbnailer->thumbnail_size         = 256;
+     thumbnailer->thumbnail_image_type   = Jpeg;
+ 
+diff --git a/main.cpp b/main.cpp
+index 7cb7089..4b11444 100644
+--- a/main.cpp
++++ b/main.cpp
+@@ -76,7 +76,6 @@ int main(int argc, char** argv)
+                 thumbnailSize = atoi(optarg);
+                 break;
+             case 'f':
+-                filmStripOverlay = true;
+                 break;
+             case 'p':
+                 smartFrameSelection = true;
