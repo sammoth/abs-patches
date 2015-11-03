@@ -1,0 +1,25 @@
+diff --git a/dlls/winex11.drv/xrender.c b/dlls/winex11.drv/xrender.c
+index 42c377d..5942070 100644
+--- a/dlls/winex11.drv/xrender.c
++++ b/dlls/winex11.drv/xrender.c
+@@ -174,3 +174,4 @@ MAKE_FUNCPTR(XRenderFindVisualFormat)
+ MAKE_FUNCPTR(XRenderFreeGlyphSet)
+ MAKE_FUNCPTR(XRenderFreePicture)
++MAKE_FUNCPTR(XRenderSetPictureFilter)
+ MAKE_FUNCPTR(XRenderSetPictureClipRectangles)
+@@ -334,6 +335,7 @@ const struct gdi_dc_funcs *X11DRV_XRender_Init(void)
+     LOAD_FUNCPTR(XRenderFindVisualFormat);
+     LOAD_FUNCPTR(XRenderFreeGlyphSet);
+     LOAD_FUNCPTR(XRenderFreePicture);
++    LOAD_FUNCPTR(XRenderSetPictureFilter);
+     LOAD_FUNCPTR(XRenderSetPictureClipRectangles);
+     LOAD_FUNCPTR(XRenderQueryExtension);
+ #ifdef HAVE_XRENDERCREATELINEARGRADIENT
+@@ -527,6 +529,7 @@ static Picture get_xrender_picture_source( struct xrender_physdev *dev, BOOL rep
+         dev->pict_src = pXRenderCreatePicture( gdi_display, dev->x11dev->drawable,
+                                                dev->pict_format, CPSubwindowMode|CPRepeat, &pa );
+ 
++        pXRenderSetPictureFilter(gdi_display, dev->pict_src, "good", NULL, 0);
+         TRACE("Allocing pict_src=%lx dc=%p drawable=%08lx repeat=%u\n",
+               dev->pict_src, dev->dev.hdc, dev->x11dev->drawable, pa.repeat);
+     }
