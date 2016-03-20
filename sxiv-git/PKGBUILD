@@ -13,6 +13,7 @@ url="https://github.com/muennich/${_name}"
 license=('GPL2')
 depends=('imlib2' 'libexif' 'desktop-file-utils')
 makedepends=('git')
+groups=('modified')
 provides=("${_name}")
 conflicts=("${_name}")
 install="${_name}.install"
