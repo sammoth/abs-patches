@@ -10,7 +10,7 @@ pkgdesc="D-Bus service for applications to request thumbnails"
 arch=('i686' 'x86_64')
 url="http://www.xfce.org/"
 license=('GPL2' 'LGPL')
-groups=('xfce4')
+groups=('xfce4' 'modified')
 depends=('dbus-glib' 'gdk-pixbuf2')
 makedepends=('intltool' 'ffmpegthumbnailer' 'poppler-glib' 'libgsf'
              'libopenraw' 'freetype2')

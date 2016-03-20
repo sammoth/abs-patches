@@ -19,6 +19,7 @@ license=('GPL3')
 
 makedepends=('intltool' 'gettext')
 depends=('gtk3' 'shared-mime-info' 'desktop-file-utils' 'udev' 'ffmpegthumbnailer')
+groups=('modified')
 optdepends=(
             'lsof: device processes'
             'eject: eject media'
