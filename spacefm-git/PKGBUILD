@@ -10,11 +10,11 @@ USE_GDB=0
 
 _name="spacefm"
 pkgname="$_name-git-next"
-pkgver=20150919.1537
+pkgver=20160120.1586
 pkgrel=1
 pkgdesc="A multi-panel tabbed file manager - git branch"
 arch=('i686' 'x86_64')
-url=("http://ignorantguru.github.com/$_name/")
+url="http://ignorantguru.github.com/$_name/"
 license=('GPL3')
 
 makedepends=('intltool' 'gettext')
