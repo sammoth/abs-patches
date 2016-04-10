@@ -5,7 +5,7 @@
 
 _name=sxiv
 pkgname="${_name}-git"
-pkgver=2015.08.19.ga3838c1
+pkgver=2016.02.12.gf32771a
 pkgrel=1
 pkgdesc="Simple (or small or suckless) X Image Viewer"
 arch=('i686' 'x86_64')
@@ -29,6 +29,9 @@ prepare() {
   cd "${srcdir}/${_name}"
   # use your customisations  
   [[ -f $SRCDEST/config.h ]] && cp "$SRCDEST"/config.h .
+
+  # my patches
+  patch -Np1 -i "${srcdir}/../nocache.patch"
 
   # Allow custom FLAGS
   sed -i Makefile -e 's|^CFLAGS\s*=|CFLAGS +=|' -e 's|^LDFLAGS\s*=|LDFLAGS +=|'

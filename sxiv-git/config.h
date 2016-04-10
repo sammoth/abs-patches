@@ -9,13 +9,13 @@ enum {
 /* bar font:
  * (see X(7) section "FONT NAMES" for valid values)
  */
-static const char * const BAR_FONT = "-*-terminus-bold-*-*-*-12-*-*-*-*-*-*-*";
+static const char * const BAR_FONT = "-*-ttyp0-medium-*-*-*-12-*-*-*-*-*-*-*";
 
 /* colors:
  * (see X(7) section "COLOR NAMES" for valid values)
  */
-static const char * const WIN_BG_COLOR = "#000000";
-static const char * const WIN_FS_COLOR = "#000000";
+static const char * const WIN_BG_COLOR = "#222222";
+static const char * const WIN_FS_COLOR = "#222222";
 static const char * const SEL_COLOR    = "#EEEEEE";
 static const char * const BAR_BG_COLOR = "#222222";
 static const char * const BAR_FG_COLOR = "#EEEEEE";
@@ -27,8 +27,8 @@ static const char * const BAR_FG_COLOR = "#EEEEEE";
  * (first/last value is used as min/max zoom level)
  */
 static const float zoom_levels[] = {
-	 12.5,  25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 57.5, 65.0, 75.0, 87.5,
-	100.0, 110.0, 120.0, 130.0, 140.0, 150.0, 175.0, 200.0, 250.0, 300.0, 350.0, 400.0, 800.0
+	1.0, 5.0, 7.5, 10.0, 12.5,  25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 57.5, 65.0, 75.0, 87.5,
+	100.0, 110.0, 120.0, 130.0, 140.0, 150.0, 175.0, 200.0, 250.0, 300.0, 350.0, 400.0, 500.0, 600.0, 800.0, 1000.0, 1500.0
 };
 
 /* default slideshow delay (in sec, overwritten via -S option): */
@@ -54,7 +54,10 @@ static const bool ALPHA_LAYER = false;
 #ifdef _THUMBS_CONFIG
 
 /* thumbnail sizes in pixels (width == height): */
-static const int thumb_sizes[] = { 32, 64, 96, 128, 160 };
+static const int thumb_sizes[] = { 32, 64, 96, 128, 160, 192, 256 };
+
+/* thumbnail size at startup, index into thumb_sizes[]: */
+static const int THUMB_SIZE = 3;
 
 #endif
 #ifdef _MAPPINGS_CONFIG
@@ -147,7 +150,7 @@ static const button_t buttons[] = {
 	{ 0,            1,                i_drag,           None },
 	{ 0,            2,                g_switch_mode,           None },
 	{ 0,            3,                g_toggle_fullscreen,  None },
-	{ 0,            8,                g_quit,  None },
+	{ 0,            11,                g_quit,  None },
 	{ ShiftMask,    4,                i_navigate,           -1 },
 	{ ShiftMask,    5,                i_navigate,           +1 },
 	{ 0,  4,                g_zoom,               +1 },
