@@ -1,0 +1,34 @@
+diff --git a/ffmpegthumbnailer.cpp b/ffmpegthumbnailer.cpp
+index e8604e4..fb7e82b 100644
+--- a/ffmpegthumbnailer.cpp
++++ b/ffmpegthumbnailer.cpp
+@@ -28,7 +28,6 @@ extern "C"
+ 
+ FFMpegThumbnailer::FFMpegThumbnailer()
+ {
+-    m_Thumbnailer.addFilter(&m_FilmStrip);
+ }
+ 
+ FFMpegThumbnailer::~FFMpegThumbnailer()
+diff --git a/ffmpegthumbnailer/filmstripfilter.cpp b/ffmpegthumbnailer/filmstripfilter.cpp
+index 377ead0..bf222c8 100644
+--- a/ffmpegthumbnailer/filmstripfilter.cpp
++++ b/ffmpegthumbnailer/filmstripfilter.cpp
+@@ -25,6 +25,8 @@ static const int FILMHOLE_HEIGHT = 10;
+ 
+ static const quint8* determineFilmStrip(quint32 videoWidth, quint32& filmStripWidth, quint32& filmStripHeight)
+ {
++    return NULL;
++
+     if (videoWidth <= SMALLEST_FILM_STRIP_WIDTH * 2)
+     {
+         return NULL;
+@@ -62,6 +64,8 @@ static const quint8* determineFilmStrip(quint32 videoWidth, quint32& filmStripWi
+ 
+ void FilmStripFilter::process(VideoFrame& videoFrame)
+ {
++    return;
++
+     quint32 filmStripWidth;
+     quint32 filmStripHeight;
+     const quint8* filmHole = determineFilmStrip(videoFrame.width, filmStripWidth, filmStripHeight);
