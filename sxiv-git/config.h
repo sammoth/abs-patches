@@ -2,8 +2,8 @@
 
 /* default window dimensions (overwritten via -g option): */
 enum {
-	WIN_WIDTH  = 1600,
-	WIN_HEIGHT = 1200
+	WIN_WIDTH  = 1000,
+	WIN_HEIGHT = 1000
 };
 
 /* bar font:
@@ -27,7 +27,7 @@ static const char * const BAR_FG_COLOR = "#EEEEEE";
  * (first/last value is used as min/max zoom level)
  */
 static const float zoom_levels[] = {
-	1.0, 5.0, 7.5, 10.0, 12.5,  25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 57.5, 65.0, 75.0, 87.5,
+	1.0, 5.0, 7.5, 10.0, 12.5, 15.0, 18.0, 21.0,  25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 57.5, 65.0, 75.0, 87.5,
 	100.0, 110.0, 120.0, 130.0, 140.0, 150.0, 175.0, 200.0, 250.0, 300.0, 350.0, 400.0, 500.0, 600.0, 800.0, 1000.0, 1500.0
 };
 
