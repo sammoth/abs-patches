@@ -42,7 +42,7 @@ pkgver() {
 
 prepare() {
     cd "$srcdir/spacefm"
-    ./autogen.sh --prefix=/usr $_opts --with-gtk3 --with-preferable-sudo="lxqt-sudo"
+    ./autogen.sh --prefix=/usr $_opts --with-preferable-sudo="lxqt-sudo"
 }
 
 build() {
@@ -51,6 +51,7 @@ build() {
 
   patch -uNp1 -i ../../spacefm-nofilmstrips.patch || return 1
   patch -uNp1 -i ../../thumbcache.patch || return 1
+  patch -uNp1 -i ../../160thumb.patch || return 1
 
   make
 
