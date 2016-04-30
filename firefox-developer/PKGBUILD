@@ -2,13 +2,14 @@
 _name=firefox
 _channel=developer
 
-pkgname="${_name}-${_channel}"
-_basever=47.0a2
+pkgname="${_name}-${_channel}"-latest
+_basever=48.0a2
 pkgdesc='Standalone web browser from mozilla.org, developer build'
 url='http://www.mozilla.org/firefox/developer'
-pkgver=47.0a2_20160420004046
+pkgver=48.0a2_20160429004052
 pkgrel=1
 arch=('i686' 'x86_64')
+provides=('firefox-developer')
 license=('MPL' 'GPL' 'LGPL')
 _file="${_name}-${_basever}.en-US.linux-${CARCH}"
 _srcurl="https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora"
