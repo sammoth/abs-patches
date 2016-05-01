@@ -22,6 +22,11 @@ optdepends=('ffmpegthumbnailer: for video thumbnails'
 source=(http://archive.xfce.org/src/apps/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.bz2)
 sha256sums=('d0fd329273ff6ac98885eade4c3d8c87a4dd0816f713646130808bfa90b87173')
 
+prepare(){
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  patch -Np1 -i "${srcdir}/../noexif.patch"
+}
+
 build() {
   cd "$srcdir/$pkgname-$pkgver"
 
@@ -32,7 +37,7 @@ build() {
     --disable-static \
     --disable-debug \
     --disable-gstreamer-thumbnailer \
-    --disable-jpeg-thumbnailer
+#    --disable-jpeg-thumbnailer
     # sammoth : above: this stops exif thumbs being used
   make
 }

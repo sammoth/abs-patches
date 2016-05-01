@@ -1,0 +1,13 @@
+diff --git a/plugins/jpeg-thumbnailer/jpeg-thumbnailer.c b/plugins/jpeg-thumbnailer/jpeg-thumbnailer.c
+index e3f0895..1bfdc3c 100644
+--- a/plugins/jpeg-thumbnailer/jpeg-thumbnailer.c
++++ b/plugins/jpeg-thumbnailer/jpeg-thumbnailer.c
+@@ -608,8 +608,10 @@ tvtj_exif_extract_thumbnail (const guchar *data,
+                              guint         length,
+                              gint          size)
+ {
++  return NULL;
++
+   TvtjExif   exif;
+   guint      offset;
+   GdkPixbuf *thumb = NULL;
