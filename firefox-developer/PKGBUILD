@@ -3,10 +3,10 @@ _name=firefox
 _channel=developer
 
 pkgname="${_name}-${_channel}"-latest
-_basever=48.0a2
+_basever=50.0a2
 pkgdesc='Standalone web browser from mozilla.org, developer build'
 url='http://www.mozilla.org/firefox/developer'
-pkgver=48.0a2_20160429004052
+pkgver=50.0a2_20160916004005
 pkgrel=1
 arch=('i686' 'x86_64')
 provides=('firefox-developer')

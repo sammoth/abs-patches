@@ -3,21 +3,21 @@
 /* default window dimensions (overwritten via -g option): */
 enum {
 	WIN_WIDTH  = 1000,
-	WIN_HEIGHT = 1000
+	WIN_HEIGHT = 1150
 };
 
 /* bar font:
  * (see X(7) section "FONT NAMES" for valid values)
  */
-static const char * const BAR_FONT = "-*-ttyp0-medium-*-*-*-12-*-*-*-*-*-*-*";
+static const char * const BAR_FONT = "Fira Sans Medium:size=9";
 
 /* colors:
  * (see X(7) section "COLOR NAMES" for valid values)
  */
-static const char * const WIN_BG_COLOR = "#222222";
-static const char * const WIN_FS_COLOR = "#222222";
+static const char * const WIN_BG_COLOR = "#000000";
+static const char * const WIN_FS_COLOR = "#000000";
 static const char * const SEL_COLOR    = "#EEEEEE";
-static const char * const BAR_BG_COLOR = "#222222";
+static const char * const BAR_BG_COLOR = "#000000";
 static const char * const BAR_FG_COLOR = "#EEEEEE";
 
 #endif

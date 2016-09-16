@@ -4,8 +4,8 @@
 # Contributor: Bastien Dejean <baskerville@lavabit.com>
 
 _name=sxiv
-pkgname="${_name}-git"
-pkgver=2016.02.12.gf32771a
+pkgname="${_name}-custom-git"
+pkgver=2016.08.10.gd69f39e
 pkgrel=1
 pkgdesc="Simple (or small or suckless) X Image Viewer"
 arch=('i686' 'x86_64')
