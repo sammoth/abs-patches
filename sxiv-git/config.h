@@ -3,13 +3,13 @@
 /* default window dimensions (overwritten via -g option): */
 enum {
 	WIN_WIDTH  = 1000,
-	WIN_HEIGHT = 1150
+	WIN_HEIGHT = 1130
 };
 
 /* bar font:
  * (see X(7) section "FONT NAMES" for valid values)
  */
-static const char * const BAR_FONT = "Fira Sans Medium:size=9";
+static const char * const BAR_FONT = "Droid Sans Fallback:size=8:style=bold";
 
 /* colors:
  * (see X(7) section "COLOR NAMES" for valid values)
