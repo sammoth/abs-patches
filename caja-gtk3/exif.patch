@@ -1,0 +1,13 @@
+diff --git a/config.h b/config.h
+index ec36fa3..679487b 100644
+--- a/config.h
++++ b/config.h
+@@ -35,7 +35,7 @@
+ #define HAVE_EXEMPI 1
+ 
+ /* Define to enable EXIF support */
+-#define HAVE_EXIF 1
++#undef HAVE_EXIF
+ 
+ /* Define if the GNU gettext() function is already present or preinstalled. */
+ #define HAVE_GETTEXT 1
