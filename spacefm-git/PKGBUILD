@@ -1,7 +1,7 @@
 # Maintainer: flu
 # Contributor: IgnorantGuru http://igurublog.wordpress.com/contact-ignorantguru/
 
-GTK=3
+GTK=2
 
 pkgname="spacefm-git"
 pkgver=20160419

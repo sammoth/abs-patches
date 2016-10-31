@@ -3,7 +3,7 @@
 /* default window dimensions (overwritten via -g option): */
 enum {
 	WIN_WIDTH  = 1000,
-	WIN_HEIGHT = 1130
+	WIN_HEIGHT = 1120
 };
 
 /* bar font:
