@@ -1,9 +1,9 @@
-# $Id: PKGBUILD 260286 2016-02-27 14:10:23Z alucryd $
+# $Id: PKGBUILD 287127 2017-01-22 17:38:57Z arojas $
 # Maintainer: Ronald van Haren <ronald.archlinux.org>
 # Contributor: boromil@gmail.com
 
 pkgname=ffmpegthumbnailer
-pkgver=2.1.1
+pkgver=2.2.0
 pkgrel=1
 pkgdesc="Lightweight video thumbnailer that can be used by file managers."
 url="https://github.com/dirkvdb/ffmpegthumbnailer"
@@ -14,7 +14,7 @@ makedepends=('cmake')
 groups=('modified')
 optdepends=('gvfs: support for gio uris')
 source=("https://github.com/dirkvdb/$pkgname/archive/$pkgver.tar.gz")
-sha1sums=('a5e7f15a95990349d6b54a13d723d209e19eab35')
+sha1sums=('cbd130569ed56f8e3097378b52d66dde2f23b0d4')
 
 prepare() {
   cd "${srcdir}/${pkgname}-${pkgver}"
