@@ -1,9 +1,9 @@
-# $Id: PKGBUILD 183035 2016-07-17 21:44:26Z faidoc $
+# $Id: PKGBUILD 203370 2016-12-31 01:11:30Z faidoc $
 # Maintainer: Alexandre Filgueira <alexfilgueira@cinnarch.com>
 # Contributor: Ner0
 
 pkgname=nemo
-pkgver=3.0.6
+pkgver=3.2.2
 pkgrel=1
 pkgdesc="Cinnamon file manager (Nautilus fork)"
 arch=('i686' 'x86_64')
@@ -11,12 +11,13 @@ url="https://github.com/linuxmint/nemo"
 license=('GPL')
 depends=('libexif' 'gvfs' 'dconf' 'desktop-file-utils' 'exempi' 'python'
          'cinnamon-desktop' 'libnotify' 'libxml2' 'cinnamon-translations')
+optdepends=('ffmpegthumbnailer: support for video thumbnails')
 makedepends=('gtk-doc' 'gobject-introspection' 'intltool' 'gnome-common'
       'python-gobject' 'python-polib' 'python2-gobject')
 options=('!emptydirs')
 groups=('modified')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/linuxmint/nemo/tarball/$pkgver")
-sha256sums=('77d5c47a6657dfbaf66c9f80978ce8650595753138d27bd2adaebbe0e46c3e23')
+sha256sums=('5f04fe37112d15d55d0fe1783252a8d03df70897fb5349ef6d28dbdbcf226407')
 
 prepare() {
   cd linuxmint-nemo-*
@@ -48,4 +49,7 @@ package() {
   cd linuxmint-nemo-*
 
   make DESTDIR="$pkgdir" install
+
+  # Remove D-Bus activation file to avoid conflict with nautilus-desktop
+  rm "$pkgdir/usr/share/dbus-1/services/org.nemo.freedesktop.FileManager1.service"
 }
