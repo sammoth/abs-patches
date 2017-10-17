@@ -1,7 +1,7 @@
 # Maintainer:  AppleBloom <rat.o.drat@gmail.com>
 
 _pkgname="easystroke"
-pkgname="$_pkgname-git"
+pkgname="$_pkgname-custom-git"
 pkgver=0.6.0.r10.gf3815dc
 pkgrel=1
 pkgdesc="Gesture-recognition application for X11."
