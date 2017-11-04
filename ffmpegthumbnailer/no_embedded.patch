@@ -1,0 +1,36 @@
+diff --git a/libffmpegthumbnailer/moviedecoder.cpp b/libffmpegthumbnailer/moviedecoder.cpp
+index 777f8a7..5317adf 100644
+--- a/libffmpegthumbnailer/moviedecoder.cpp
++++ b/libffmpegthumbnailer/moviedecoder.cpp
+@@ -88,7 +88,7 @@ void MovieDecoder::initialize(const string& filename, bool preferEmbeddedMetadat
+         throw logic_error("Could not find stream information");
+     }
+ 
+-    initializeVideo(preferEmbeddedMetadata);
++    initializeVideo(false);
+     m_pFrame = av_frame_alloc();
+ }
+ 
+@@ -124,7 +124,7 @@ void MovieDecoder::destroy()
+ 
+ bool MovieDecoder::embeddedMetaDataIsAvailable()
+ {
+-    return m_UseEmbeddedData;
++    return false;
+ }
+ 
+ string MovieDecoder::getCodec()
+@@ -178,12 +178,7 @@ int32_t MovieDecoder::findPreferedVideoStream(bool preferEmbeddedMetadata)
+     }
+ 
+     m_UseEmbeddedData = false;
+-    if (preferEmbeddedMetadata && !embeddedDataStream.empty())
+-    {
+-        m_UseEmbeddedData = true;
+-        return embeddedDataStream.front();
+-    }
+-    else if (!videoStreams.empty())
++    if (!videoStreams.empty())
+     {
+         return videoStreams.front();
+     }

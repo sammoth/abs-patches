@@ -18,6 +18,7 @@ sha1sums=('cbd130569ed56f8e3097378b52d66dde2f23b0d4')
 
 prepare() {
   cd "${srcdir}/${pkgname}-${pkgver}"
+  patch -Np1 -F 20 -i "${srcdir}/../no_embedded.patch"
   patch -Np1 -i "${srcdir}/../nofilmstrip.patch"
 }
 
