@@ -38,6 +38,7 @@ build() {
     --disable-static \
     --disable-debug \
     --disable-gstreamer-thumbnailer \
+    --disable-cover-thumbnailer \
     --disable-jpeg-thumbnailer
     # sammoth : above: this stops exif thumbs being used
   make
