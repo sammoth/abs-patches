@@ -5,24 +5,23 @@
 
 _name=sxiv
 pkgname="${_name}-custom-git"
-pkgver=2017.05.17.g52c57f5
+pkgver=2017.12.13
 pkgrel=1
 pkgdesc="Simple (or small or suckless) X Image Viewer"
 arch=('i686' 'x86_64')
 url="https://github.com/muennich/${_name}"
 license=('GPL2')
-depends=('imlib2' 'libexif' 'desktop-file-utils')
+depends=('imlib2' 'libexif' 'libxft' 'hicolor-icon-theme')
 makedepends=('git')
 groups=('modified')
 provides=("${_name}")
 conflicts=("${_name}")
-install="${_name}.install"
 source=("${_name}::git+${url}.git")
 sha256sums=('SKIP')
 
 pkgver() {
   cd "${srcdir}/${_name}"
-  git log -1 --format="%cd.g%h" --date=short | sed 's/-/./g'
+  git log -1 --format="%cd" --date=short | sed 's/-/./g'
 }
 
 prepare() {

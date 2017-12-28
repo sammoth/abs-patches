@@ -7,9 +7,9 @@ enum {
 };
 
 /* bar font:
- * (see X(7) section "FONT NAMES" for valid values)
+ * (see fonts-conf(5) subsection "FONT NAMES" for valid values)
  */
-static const char * const BAR_FONT = "Droid Sans Fallback:size=8:style=bold";
+static const char * const BAR_FONT = "UW Ttyp0:size=9:style=bold";
 
 /* colors:
  * (see X(7) section "COLOR NAMES" for valid values)
@@ -38,6 +38,9 @@ enum { SLIDESHOW_DELAY = 5 };
  * */
 static const double GAMMA_MAX   = 10.0;
 static const int    GAMMA_RANGE = 32;
+
+/* command i_scroll pans image 1/PAN_FRACTION of screen width/height */
+static const int PAN_FRACTION = 5;
 
 /* if false, pixelate images at zoom level != 100%,
  * toggled with 'a' key binding
