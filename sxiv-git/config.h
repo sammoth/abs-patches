@@ -2,14 +2,14 @@
 
 /* default window dimensions (overwritten via -g option): */
 enum {
-	WIN_WIDTH  = 1700,
-	WIN_HEIGHT = 1670
+	WIN_WIDTH  = 900,
+	WIN_HEIGHT = 1160
 };
 
 /* bar font:
  * (see fonts-conf(5) subsection "FONT NAMES" for valid values)
  */
-static const char * const BAR_FONT = "UW Ttyp0:size=9:style=bold";
+static const char * const BAR_FONT = "UW Ttyp0:size=9";
 
 /* colors:
  * (see X(7) section "COLOR NAMES" for valid values)
@@ -27,7 +27,7 @@ static const char * const BAR_FG_COLOR = "#EEEEEE";
  * (first/last value is used as min/max zoom level)
  */
 static const float zoom_levels[] = {
-    10, 10.5, 11.03, 11.58, 12.16, 12.76, 13.4, 14.07, 14.77, 15.51, 16.29, 17.1, 17.96, 18.86, 19.8, 20.79, 21.83, 22.92, 24.07, 25.27, 26.53, 27.86, 29.25, 30.72, 32.25, 33.86, 35.56, 37.33, 39.2, 41.16, 43.22, 45.38, 47.65, 50.03, 52.53, 55.16, 57.92, 60.81, 63.85, 67.05, 70.4, 73.92, 77.62, 81.5, 85.57, 89.85, 94.34, 99.06, 104.01, 109.21, 114.67, 120.41, 126.43, 132.75, 139.39, 146.36, 153.67, 161.36, 169.43, 177.9, 186.79, 196.13, 200.0, 216.23, 227.05, 238.4, 250.32, 262.83, 275.98, 289.78, 300.00, 319.48, 335.45, 352.22, 369.84, 388.33, 400.00, 428.13, 449.54, 472.01, 495.61, 520.4, 546.41, 573.74, 602.42, 632.54, 664.17, 697.38, 732.25, 768.86, 807.3, 847.67, 890.05, 934.55, 981.28
+    10, 10.5, 11.03, 11.58, 12.16, 12.76, 13.4, 14.07, 14.77, 15.51, 16.29, 17.1, 17.96, 18.86, 19.8, 20.79, 21.83, 22.92, 24.07, 25.27, 26.53, 27.86, 29.25, 30.72, 32.25, 33.86, 35.56, 37.33, 39.2, 41.16, 43.22, 45.38, 47.65, 50.03, 52.53, 55.16, 57.92, 60.81, 63.85, 67.05, 70.4, 73.92, 77.62, 81.5, 85.57, 89.85, 94.34, 100.00, 104.01, 109.21, 114.67, 120.41, 126.43, 132.75, 139.39, 146.36, 153.67, 161.36, 169.43, 177.9, 186.79, 196.13, 200.0, 216.23, 227.05, 238.4, 250.32, 262.83, 275.98, 289.78, 300.00, 319.48, 335.45, 352.22, 369.84, 388.33, 400.00, 428.13, 449.54, 472.01, 495.61, 520.4, 546.41, 573.74, 602.42, 632.54, 664.17, 697.38, 732.25, 768.86, 807.3, 847.67, 890.05, 934.55, 981.28
 };
 
 /* default slideshow delay (in sec, overwritten via -S option): */
@@ -40,7 +40,7 @@ static const double GAMMA_MAX   = 10.0;
 static const int    GAMMA_RANGE = 32;
 
 /* command i_scroll pans image 1/PAN_FRACTION of screen width/height */
-static const int PAN_FRACTION = 5;
+static const int PAN_FRACTION = 10;
 
 /* if false, pixelate images at zoom level != 100%,
  * toggled with 'a' key binding
