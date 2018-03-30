@@ -3,12 +3,12 @@
 
 GTK=3
 
-pkgname="spacefm-ng-git"
+pkgname="spacefm-git"
 pkgver=20170325
 pkgrel=1
 pkgdesc="A multi-panel tabbed file manager - git branch"
 arch=('i686' 'x86_64')
-url="https://github.com/sammoth/spacefm-ng"
+url="https://github.com/IgnorantGuru/spacefm"
 license=('GPL3')
 conflicts=("spacefm")
 provides=("spacefm")
@@ -31,26 +31,26 @@ else
     depends+=('gtk3'); _opts='--with-gtk3'
 fi
 
-source=("git+https://github.com/sammoth/spacefm-ng.git#branch=alpha")
+source=("git+https://github.com/IgonorantGuru/spacefm.git#branch=alpha")
 sha512sums=(SKIP)
 
 pkgver() {
-    cd "$srcdir/spacefm-ng"
+    cd "$srcdir/spacefm"
     echo $(git log -1 --format="%cd" --date=short |tr -d -)
 }
 
 prepare() {
-    cd "$srcdir/spacefm-ng"
+    cd "$srcdir/spacefm"
     ./autogen.sh --prefix=/usr $_opts
 }
 
 build() {
-    cd "$srcdir/spacefm-ng"
+    cd "$srcdir/spacefm"
     make
 
 }
 
 package() {
-    cd "$srcdir/spacefm-ng"
+    cd "$srcdir/spacefm"
     make DESTDIR="$pkgdir" install
 }

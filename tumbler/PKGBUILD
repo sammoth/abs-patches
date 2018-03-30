@@ -19,7 +19,7 @@ optdepends=('ffmpegthumbnailer: for video thumbnails'
             'libgsf: for ODF thumbnails'
             'libopenraw: for RAW thumbnails'
             'freetype2: for font thumbnails')
-source=("git+https://github.com/sammoth/tumbler.git#branch=master")
+source=("git+https://github.com/sammoth/tumbler.git#branch=lodpi")
 sha256sums=('SKIP')
 
 prepare(){
