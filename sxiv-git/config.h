@@ -17,7 +17,7 @@ static const char * const BAR_FONT = "UW Ttyp0:size=9";
 static const char * const WIN_BG_COLOR = "#000000";
 static const char * const WIN_FS_COLOR = "#000000";
 static const char * const SEL_COLOR    = "#EEEEEE";
-static const char * const BAR_BG_COLOR = "#000000";
+static const char * const BAR_BG_COLOR = "#191919";
 static const char * const BAR_FG_COLOR = "#EEEEEE";
 
 #endif
