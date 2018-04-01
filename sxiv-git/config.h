@@ -145,13 +145,12 @@ static const button_t buttons[] = {
 	/* modifiers    button            function              argument */
 	{ 0,            1,                i_cursor_navigate,    None },
 	{ 0,            2,                i_drag,               DRAG_ABSOLUTE },
-	{ ControlMask,  1,                i_drag,               DRAG_ABSOLUTE },
 	{ 0,            3,                g_toggle_fullscreen,  None },
 	{ 0,            11,               g_quit,               None },
-	{ 0,            4,                i_navigate,           -1 },
-	{ 0,            5,                i_navigate,           +1 },
-	{ ControlMask,  4,                g_zoom,               +1 },
-	{ ControlMask,  5,                g_zoom,               -1 },
+	{ ShiftMask,    4,                i_navigate,           -1 },
+	{ ShiftMask,    5,                i_navigate,           +1 },
+	{ 0,            4,                g_zoom,               +1 },
+	{ 0,            5,                g_zoom,               -1 },
 };
 
 #endif
