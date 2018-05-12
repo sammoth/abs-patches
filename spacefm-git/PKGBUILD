@@ -47,7 +47,6 @@ prepare() {
 build() {
     cd "$srcdir/spacefm"
     make
-
 }
 
 package() {
