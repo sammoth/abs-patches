@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "UW Ttyp0:pixelsize=12:antialias=false:autohint=false";
+static char font[] = "Fira Code Medium:pixelsize=25:antialias=true:autohint=false";
 static int borderpx = 1;
 
 /*
