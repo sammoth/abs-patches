@@ -13,7 +13,6 @@ url="https://github.com/sammoth/${_name}"
 license=('GPL2')
 depends=('imlib2' 'libexif' 'libxft' 'hicolor-icon-theme')
 makedepends=('git')
-groups=('modified')
 provides=("${_name}")
 conflicts=("${_name}")
 source=("${_name}::git+${url}.git")

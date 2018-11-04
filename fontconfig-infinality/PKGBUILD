@@ -9,7 +9,7 @@ pkgdesc="Fontconfig files for use with freetype2-infinality."
 arch=(any)
 license=('GPL')
 url="http://www.infinality.net/blog/infinality-freetype-patches/"
-depends=('fontconfig' 'freetype2-infinality')
+depends=('fontconfig' 'freetype2')
 install='install.sh'
 backup=(
 	'etc/fonts/infinality/infinality.conf'
