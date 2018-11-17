@@ -2,7 +2,7 @@
 
 _pkgname=libfm-qt-custom
 pkgname=$_pkgname-git
-pkgver=0.12.0.78.g31a0dde
+pkgver=0.12.0.360.g1d6ce97
 pkgrel=1
 pkgdesc='Qt port of libfm, a library providing components to build desktop file managers'
 arch=('i686' 'x86_64')
