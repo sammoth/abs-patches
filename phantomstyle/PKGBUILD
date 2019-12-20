@@ -1,0 +1,30 @@
+pkgname='phantomstyle-git'
+pkgver=r63.769a864
+pkgrel=1
+pkgdesc="Qt5 style plugin for traditionalists"
+arch=('x86_64')
+url="https://github.com/randrew/phantomstyle"
+license=('LGPL2' 'MIT')
+depends=('qt5-base')
+makedepends=('git' 'make' 'coreutils')
+provides=("${pkgname%-git}")
+source=('git+https://github.com/randrew/phantomstyle.git')
+md5sums=('SKIP')
+
+pkgver() {
+	cd "${srcdir}/${pkgname%-git}"
+
+	# Git, no tags available
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+	cd "${srcdir}/${pkgname%-git}/src/styleplugin"
+	qmake
+	make
+}
+
+package() {
+	install -d "${pkgdir}/usr/lib/qt/plugins/styles"
+	install "${srcdir}/${pkgname%-git}/src/styleplugin/libphantomstyleplugin.so" "${pkgdir}/usr/lib/qt/plugins/styles/"
+}
