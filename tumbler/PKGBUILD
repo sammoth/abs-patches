@@ -3,7 +3,7 @@
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Jan Jezek <honzin.jezek@gmail.com>
 
-pkgname=tumbler
+pkgname=tumbler-custom-git
 pkgver=0.2.99
 pkgrel=1
 pkgdesc="D-Bus service for applications to request thumbnails"
@@ -12,6 +12,8 @@ url="http://www.xfce.org/"
 license=('GPL2' 'LGPL')
 groups=('xfce4' 'modified')
 depends=('gdk-pixbuf2')
+provides=('tumbler')
+conflicts=('tumbler')
 makedepends=('intltool' 'python' 'ffmpegthumbnailer' 'poppler-glib' 'libgsf'
              'libopenraw' 'freetype2')
 optdepends=('ffmpegthumbnailer: for video thumbnails'
@@ -19,16 +21,16 @@ optdepends=('ffmpegthumbnailer: for video thumbnails'
             'libgsf: for ODF thumbnails'
             'libopenraw: for RAW thumbnails'
             'freetype2: for font thumbnails')
-source=("git+https://github.com/sammoth/tumbler.git#branch=lodpi")
+source=("git+https://github.com/xfce-mirror/tumbler.git")
 sha256sums=('SKIP')
 
 prepare(){
-  cd "${srcdir}/${pkgname}"
+  cd "${srcdir}/tumbler"
   patch -Np1 -i "${srcdir}/../noexif.patch"
 }
 
 build() {
-  cd "$srcdir/$pkgname"
+  cd "$srcdir/tumbler"
   ls
 
   ./autogen.sh \
@@ -45,7 +47,7 @@ build() {
 }
 
 package() {
-  cd "$srcdir/$pkgname"
+  cd "$srcdir/tumbler"
   make DESTDIR="$pkgdir" install
 }
 

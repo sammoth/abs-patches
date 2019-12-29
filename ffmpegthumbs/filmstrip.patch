@@ -1,7 +1,13 @@
-diff --git a/ffmpegthumbnailer.cpp b/ffmpegthumbnailer.cpp
-index e8604e4..fb7e82b 100644
---- a/ffmpegthumbnailersettings5.kcfg
-+++ b/ffmpegthumbnailersettings5.kcfg
-@@ -8,1 +8,1 @@ extern "C"
--          <default>true</default>
-+          <default>false</default>
+diff --git a/ffmpegthumbnailer/filmstripfilter.cpp b/ffmpegthumbnailer/filmstripfilter.cpp
+index fa9025d..4328c26 100644
+--- a/ffmpegthumbnailer/filmstripfilter.cpp
++++ b/ffmpegthumbnailer/filmstripfilter.cpp
+@@ -62,6 +62,8 @@ static const quint8* determineFilmStrip(quint32 videoWidth, quint32& filmStripWi
+ 
+ void FilmStripFilter::process(VideoFrame& videoFrame)
+ {
++    return;
++  
+     quint32 filmStripWidth;
+     quint32 filmStripHeight;
+     const quint8* filmHole = determineFilmStrip(videoFrame.width, filmStripWidth, filmStripHeight);

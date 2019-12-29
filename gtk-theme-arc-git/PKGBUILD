@@ -4,7 +4,7 @@
 pkgname=gtk-theme-arc-custom-git
 _pkgname=arc-theme
 _pkgauthor=sammoth
-pkgver=665.801d844
+pkgver=845.124e0b7
 pkgrel=1
 pkgdesc="A flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell. Latest commit from the master branch on Github."
 arch=('any')
@@ -24,7 +24,7 @@ pkgver() {
 
 build() {
 	cd "${srcdir}/${_pkgname}"
-	./autogen.sh --prefix=/usr
+	./autogen.sh --prefix=/usr --with-gnome-shell-version=3.34
 }
 
 package() {
