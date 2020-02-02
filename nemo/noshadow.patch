@@ -1,0 +1,39 @@
+diff --git a/gresources/nemo.gresource.xml b/gresources/nemo.gresource.xml
+index 572019f..4415278 100644
+--- a/gresources/nemo.gresource.xml
++++ b/gresources/nemo.gresource.xml
+@@ -11,11 +11,10 @@
+     <file>nemo-desktop-icon-view-ui.xml</file>
+     <file>nemo-desktop-icon-grid-view-ui.xml</file>
+     <file>nemo-list-view-ui.xml</file>
+     <file>nemo-shell-ui.xml</file>
+     <file>nemo-statusbar-ui.xml</file>
+-    <file alias="icons/thumbnail_frame.png">thumbnail_frame.png</file>
+     <file alias="icons/knob.png">knob.png</file>
+     <file>nemo-style-fallback.css</file>
+     <file>nemo-style-fallback-mandatory.css</file>
+     <file>nemo-style-application.css</file>
+   </gresource>
+diff --git a/libnemo-private/nemo-thumbnails.c b/libnemo-private/nemo-thumbnails.c
+index a5b2ef8..f57397a 100644
+--- a/libnemo-private/nemo-thumbnails.c
++++ b/libnemo-private/nemo-thumbnails.c
+@@ -146,18 +146,10 @@ get_thumbnail_factory (void)
+ 
+ static GdkPixbuf *
+ nemo_get_thumbnail_frame (void)
+ {
+     static GdkPixbuf *thumbnail_frame = NULL;
+-
+-    if (thumbnail_frame == NULL) {
+-        GInputStream *stream = g_resources_open_stream ("/org/nemo/icons/thumbnail_frame.png", 0, NULL);
+-        if (stream != NULL) {
+-            thumbnail_frame = gdk_pixbuf_new_from_stream (stream, NULL, NULL);
+-            g_object_unref (stream);
+-        }
+-    }
+     
+     return thumbnail_frame;
+ }
+ 
+ void

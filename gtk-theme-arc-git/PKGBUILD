@@ -4,14 +4,14 @@
 pkgname=gtk-theme-arc-custom-git
 _pkgname=arc-theme
 _pkgauthor=sammoth
-pkgver=845.124e0b7
+pkgver=845.6600e94
 pkgrel=1
 pkgdesc="A flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell. Latest commit from the master branch on Github."
 arch=('any')
 url="https://github.com/sammoth/${_pkgname}"
 license=('GPL3')
 depends=('gtk3' 'gtk-engine-murrine')
-makedepends=('git')
+makedepends=('git' 'gnome-shell' 'sassc')
 source=(${_pkgname}::"git+https://github.com/sammoth/${_pkgname}.git")
 sha256sums=('SKIP')
 conflicts=('gtk-theme-arc')

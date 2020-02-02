@@ -5,7 +5,7 @@
 # This PKGBUILD was prepared for pacman 4.1 by William. Thank you. :-)
 
 pkgname=i3-custom-git
-pkgver=4.16.r163.g43bd8bf4
+pkgver=4.16.r353.g592bd267
 pkgrel=1
 pkgdesc='An improved dynamic tiling window manager'
 arch=('i686' 'x86_64')
@@ -25,7 +25,7 @@ optdepends=('rxvt-unicode: The terminal emulator used in the default config.'
             'perl-json-xs: For i3-save-tree'
             'perl-anyevent-i3: For i3-save-tree')
 options=('docs' '!strip' 'debug')
-source=('git://github.com/sammoth/i3#branch=master')
+source=('git://github.com/sammoth/i3#branch=next')
 sha1sums=('SKIP')
 
 _gitname='i3'
