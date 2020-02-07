@@ -4,7 +4,7 @@
 
 _pkgname=awesome
 pkgname=awesome-luajit-custom-git
-pkgver=3.5.2.3862.g4f9a304a7
+pkgver=4.3.695.g54034a62
 pkgrel=1
 pkgdesc="awesome window manager built with luajit"
 arch=('i686' 'x86_64')
@@ -23,7 +23,7 @@ optdepends=('rlwrap: readline support for awesome-client'
 provides=('notification-daemon' 'awesome')
 conflicts=('awesome')
 backup=('etc/xdg/awesome/rc.lua')
-source=("$pkgname::git+https://github.com/sammoth/awesome.git#branch=custom"
+source=("$pkgname::git+https://github.com/sammoth/awesome.git#branch=master"
         awesome.desktop
         awesomeksm.desktop)
 sha256sums=('SKIP'

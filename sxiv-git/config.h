@@ -2,8 +2,8 @@
 
 /* default window dimensions (overwritten via -g option): */
 enum {
-	WIN_WIDTH  = 900,
-	WIN_HEIGHT = 1160
+	WIN_WIDTH  = 1800,
+	WIN_HEIGHT = 1000
 };
 
 /* bar font:
@@ -59,7 +59,7 @@ static const bool ALPHA_LAYER = false;
 static const int thumb_sizes[] = { 32, 64, 96, 128, 160, 192, 254, 368 };
 
 /* thumbnail size at startup, index into thumb_sizes[]: */
-static const int THUMB_SIZE = 6;
+static const int THUMB_SIZE = 3;
 
 #endif
 #ifdef _MAPPINGS_CONFIG
