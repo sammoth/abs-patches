@@ -1,0 +1,85 @@
+diff --git a/src/nnn.h b/src/nnn.h
+index 57c8649..f29c83a 100644
+--- a/src/nnn.h
++++ b/src/nnn.h
+@@ -119,22 +119,22 @@ struct key {
+ };
+ 
+ static struct key bindings[] = {
+ 	/* Back */
+ 	{ KEY_LEFT,       SEL_BACK },
+-	{ 'h',            SEL_BACK },
++	{ 'y',            SEL_BACK },
+ 	/* Inside or select */
+ 	{ KEY_ENTER,      SEL_GOIN },
+ 	{ '\r',           SEL_GOIN },
+ 	/* Pure navigate inside */
+ 	{ KEY_RIGHT,      SEL_NAV_IN },
+-	{ 'l',            SEL_NAV_IN },
++	{ 'o',            SEL_NAV_IN },
+ 	/* Next */
+-	{ 'j',            SEL_NEXT },
++	{ 'n',            SEL_NEXT },
+ 	{ KEY_DOWN,       SEL_NEXT },
+ 	/* Previous */
+-	{ 'k',            SEL_PREV },
++	{ 'e',            SEL_PREV },
+ 	{ KEY_UP,         SEL_PREV },
+ 	/* Page down */
+ 	{ KEY_NPAGE,      SEL_PGDN },
+ 	/* Page up */
+ 	{ KEY_PPAGE,      SEL_PGUP },
+@@ -147,11 +147,10 @@ static struct key bindings[] = {
+ 	{ 'g',            SEL_HOME },
+ 	{ CONTROL('A'),   SEL_HOME },
+ 	/* Last entry */
+ 	{ KEY_END,        SEL_END },
+ 	{ 'G',            SEL_END },
+-	{ CONTROL('E'),   SEL_END },
+ 	/* Go to first file */
+ 	{ '\'',           SEL_FIRST },
+ 	/* HOME */
+ 	{ '~',            SEL_CDHOME },
+ 	/* Initial directory */
+@@ -183,11 +182,11 @@ static struct key bindings[] = {
+ 	/* Mark a path to visit later */
+ 	{ ',',            SEL_MARK },
+ 	/* Filter */
+ 	{ '/',            SEL_FLTR },
+ 	/* Toggle filter mode */
+-	{ CONTROL('N'),   SEL_MFLTR },
++	{ CONTROL('F'),   SEL_MFLTR },
+ 	/* Toggle hide .dot files */
+ 	{ '.',            SEL_HIDDEN },
+ 	/* Detailed listing */
+ 	{ 'd',            SEL_DETAIL },
+ 	/* File details */
+@@ -223,14 +222,13 @@ static struct key bindings[] = {
+ 	{ CONTROL('W'),   SEL_CPMVAS },
+ 	/* Delete from selection buffer */
+ 	{ 'x',            SEL_RM },
+ 	{ CONTROL('X'),   SEL_RM },
+ 	/* Open in a custom application */
+-	{ 'o',            SEL_OPENWITH },
+ 	{ CONTROL('O'),   SEL_OPENWITH },
+ 	/* Create a new file */
+-	{ 'n',            SEL_NEW },
++	{ CONTROL('N'),            SEL_NEW },
+ 	/* Show rename prompt */
+ 	{ CONTROL('R'),   SEL_RENAME },
+ 	/* Rename contents of current dir */
+ 	{ 'r',            SEL_RENAMEMUL },
+ 	/* Disconnect a SSHFS mount point */
+@@ -238,11 +236,11 @@ static struct key bindings[] = {
+ 	/* Show help */
+ 	{ '?',            SEL_HELP },
+ 	/* Quit a context */
+ 	{ '+',            SEL_AUTONEXT },
+ 	/* Edit in EDITOR */
+-	{ 'e',            SEL_EDIT },
++	{ CONTROL('E'),            SEL_EDIT },
+ 	/* Run a plugin */
+ 	{ ';',            SEL_PLUGIN },
+ 	/* Run command */
+ 	{ '!',            SEL_SHELL },
+ 	{ CONTROL(']'),   SEL_SHELL },
