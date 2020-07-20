@@ -2,28 +2,33 @@
 # Maintainer: Ronald van Haren <ronald.archlinux.org>
 # Contributor: boromil@gmail.com
 
-pkgname=ffmpegthumbnailer
-pkgver=2.2.0
+pkgname=ffmpegthumbnailer-custom-git
+pkgver=2.2.2.r23.g6176208
 pkgrel=1
 pkgdesc="Lightweight video thumbnailer that can be used by file managers."
 url="https://github.com/dirkvdb/ffmpegthumbnailer"
 license=('GPL2')
 arch=('i686' 'x86_64')
 depends=('ffmpeg' 'libjpeg' 'libpng')
-makedepends=('cmake')
+makedepends=('git' 'cmake')
 groups=('modified')
 optdepends=('gvfs: support for gio uris')
-source=("https://github.com/dirkvdb/ffmpegthumbnailer/archive/$pkgver.tar.gz")
-sha1sums=('cbd130569ed56f8e3097378b52d66dde2f23b0d4')
+source=('git://github.com/sammoth/ffmpegthumbnailer#branch=master')
+sha1sums=('SKIP')
+
+pkgver() {
+  cd "ffmpegthumbnailer"
+  git describe --tags --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
 
 prepare() {
-  cd "${srcdir}/ffmpegthumbnailer-${pkgver}"
-  patch -Np1 -F 20 -i "${srcdir}/../no_embedded.patch"
-  patch -Np1 -i "${srcdir}/../nofilmstrip.patch"
+  cd "${srcdir}/ffmpegthumbnailer"
+  #patch -Np1 -F 20 -i "${srcdir}/../no_embedded.patch"
+  #patch -Np1 -i "${srcdir}/../nofilmstrip.patch"
 }
 
 build() {
-  cd "${srcdir}/ffmpegthumbnailer-${pkgver}"
+  cd "${srcdir}/ffmpegthumbnailer"
   mkdir -p build
   cd build
   cmake .. \
@@ -36,6 +41,6 @@ build() {
 }
 
 package() {
-  cd "${srcdir}/ffmpegthumbnailer-${pkgver}"/build
+  cd "${srcdir}/ffmpegthumbnailer"/build
   make DESTDIR="${pkgdir}" install
 }
